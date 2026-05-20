@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos y Especificaciones</title>
+    <script src="utilidades.js"></script>
+</head>
+<body>
+
+<script>
+
+var titulo = crearElementoTexto("h1", "Productos y Especificaciones");
+agregarNodo(document.body, titulo);
+
+
+var tabla = crearElemento("table");
+agregarAtributo(tabla, "border", "1");
+agregarAtributo(tabla, "cellpadding", "10");
+agregarAtributo(tabla, "cellspacing", "0");
+agregarAtributo(tabla, "width", "100%");
+
+
+/* ENCABEZADO */
+var filaEncabezado = crearElemento("tr");
+
+agregarNodo(filaEncabezado, crearElementoTexto("th", "Producto"));
+agregarNodo(filaEncabezado, crearElementoTexto("th", "Imagen"));
+agregarNodo(filaEncabezado, crearElementoTexto("th", "Descripción"));
+agregarNodo(filaEncabezado, crearElementoTexto("th", "Características"));
+agregarNodo(filaEncabezado, crearElementoTexto("th", "Especificaciones"));
+
+agregarNodo(tabla, filaEncabezado);
+
+
+/* PRODUCTO 1 */
+var fila1 = crearElemento("tr");
+
+var c1 = crearElementoTexto("td", "Smartphone X");
+
+var c2 = crearElemento("td");
+var img1 = crearImagen("img/img.webp", "Smartphone", 150, 100);
+agregarNodo(c2, img1);
+
+var c3 = crearElementoTexto(
+    "td",
+    "Teléfono inteligente de alto rendimiento."
+);
+
+var c4 = crearElemento("td");
+var lista1 = crearElemento("ul");
+agregarNodo(lista1, crearElementoTexto("li", "Pantalla AMOLED"));
+agregarNodo(lista1, crearElementoTexto("li", "Cámara 48MP"));
+agregarNodo(lista1, crearElementoTexto("li", "Batería larga duración"));
+agregarNodo(c4, lista1);
+
+var c5 = crearElementoTexto(
+    "td",
+    "128GB / 8GB RAM / Android"
+);
+
+agregarNodo(fila1, c1);
+agregarNodo(fila1, c2);
+agregarNodo(fila1, c3);
+agregarNodo(fila1, c4);
+agregarNodo(fila1, c5);
+
+agregarNodo(tabla, fila1);
+
+
+/* PRODUCTO 2 */
+var fila2 = crearElemento("tr");
+
+var c6 = crearElementoTexto("td", "Laptop Pro");
+
+var c7 = crearElemento("td");
+var img2 = crearImagen("img/laptop.jpg", "Laptop", 150, 100);
+agregarNodo(c7, img2);
+
+var c8 = crearElementoTexto(
+    "td",
+    "Laptop potente para trabajo y diseño."
+);
+
+var c9 = crearElemento("td");
+var lista2 = crearElemento("ul");
+agregarNodo(lista2, crearElementoTexto("li", "SSD rápido"));
+agregarNodo(lista2, crearElementoTexto("li", "Procesador i7"));
+agregarNodo(lista2, crearElementoTexto("li", "Pantalla Full HD"));
+agregarNodo(c9, lista2);
+
+var c10 = crearElementoTexto(
+    "td",
+    "512GB SSD / 16GB RAM / Windows"
+);
+
+agregarNodo(fila2, c6);
+agregarNodo(fila2, c7);
+agregarNodo(fila2, c8);
+agregarNodo(fila2, c9);
+agregarNodo(fila2, c10);
+
+agregarNodo(tabla, fila2);
+
+
+/* PRODUCTO 3 */
+var fila3 = crearElemento("tr");
+
+var c11 = crearElementoTexto("td", "Tablet Z");
+
+var c12 = crearElemento("td");
+var img3 = crearImagen("img/tablet.jpg", "Tablet", 150, 100);
+agregarNodo(c12, img3);
+
+var c13 = crearElementoTexto(
+    "td",
+    "Tablet ligera y portátil."
+);
+
+var c14 = crearElemento("td");
+var lista3 = crearElemento("ul");
+agregarNodo(lista3, crearElementoTexto("li", "Pantalla HD"));
+agregarNodo(lista3, crearElementoTexto("li", "WiFi"));
+agregarNodo(lista3, crearElementoTexto("li", "Batería durable"));
+agregarNodo(c14, lista3);
+
+var c15 = crearElementoTexto(
+    "td",
+    "64GB / 4GB RAM / Android"
+);
+
+agregarNodo(fila3, c11);
+agregarNodo(fila3, c12);
+agregarNodo(fila3, c13);
+agregarNodo(fila3, c14);
+agregarNodo(fila3, c15);
+
+agregarNodo(tabla, fila3);
+
+
+agregarNodo(document.body, tabla);
+
+</script>
+
+</body>
+</html>

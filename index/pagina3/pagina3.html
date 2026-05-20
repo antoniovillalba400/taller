@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Tablas #3</title>
+    <script src="utilidades.js"></script>
+</head>
+<body>
+
+<script>
+
+var tablaMenu = crearElemento("table");
+tablaMenu.setAttribute("border", "1");
+tablaMenu.setAttribute("cellpadding", "10");
+tablaMenu.setAttribute("cellspacing", "0");
+tablaMenu.setAttribute("width", "100");
+
+var filaMenu = crearElemento("tr");
+var celdaMenu = crearElemento("td");
+
+for (var i = 1; i <= 6; i++) {
+    var link = crearElemento("a");
+    link.setAttribute("href", "../index.html");
+    link.appendChild(crearElementoTexto("Opción " + i));
+
+    celdaMenu.appendChild(link);
+
+    if (i < 6) {
+        celdaMenu.appendChild(crearElementoTexto(" | "));
+    }
+}
+
+filaMenu.appendChild(celdaMenu);
+tablaMenu.appendChild(filaMenu);
+document.body.appendChild(tablaMenu);
+
+
+var tablaPrincipal = crearElemento("table");
+tablaPrincipal.setAttribute("border", "1");
+tablaPrincipal.setAttribute("cellpadding", "10");
+tablaPrincipal.setAttribute("cellspacing", "0");
+tablaPrincipal.setAttribute("width", "100%");
+
+var filaPrincipal = crearElemento("tr");
+
+
+/* COLUMNA 1 */
+var col1 = crearElemento("td");
+col1.setAttribute("width", "40%");
+
+var fieldset = crearElemento("fieldset");
+var legend = crearElemento("legend");
+legend.appendChild(crearElementoTexto("Group Name"));
+
+var imgPrincipal = crearElemento("img");
+imgPrincipal.setAttribute("src", "https://placehold.co/380x200");
+imgPrincipal.setAttribute("width", "100%");
+
+fieldset.appendChild(legend);
+fieldset.appendChild(imgPrincipal);
+col1.appendChild(fieldset);
+
+for (var i = 0; i < 3; i++) {
+    var p = crearElemento("p");
+    p.appendChild(
+        crearElementoTexto(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        )
+    );
+    col1.appendChild(p);
+}
+
+
+/* COLUMNA 2 */
+var col2 = crearElemento("td");
+col2.setAttribute("width", "35%");
+
+var tablaImgs1 = crearElemento("table");
+tablaImgs1.setAttribute("border", "1");
+tablaImgs1.setAttribute("width", "100%");
+
+var filaImgs1 = crearElemento("tr");
+
+for (var i = 0; i < 2; i++) {
+    var td = crearElemento("td");
+    var img = crearElemento("img");
+
+    img.setAttribute("src", "https://placehold.co/140x80");
+    img.setAttribute("width", "100%");
+
+    td.appendChild(img);
+    filaImgs1.appendChild(td);
+}
+
+tablaImgs1.appendChild(filaImgs1);
+col2.appendChild(tablaImgs1);
+
+var imgCentro = crearElemento("img");
+imgCentro.setAttribute("src", "https://placehold.co/320x180");
+imgCentro.setAttribute("width", "100%");
+col2.appendChild(imgCentro);
+
+var p2 = crearElemento("p");
+p2.appendChild(
+    crearElementoTexto(
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    )
+);
+col2.appendChild(p2);
+
+var tablaImgs2 = crearElemento("table");
+tablaImgs2.setAttribute("border", "1");
+tablaImgs2.setAttribute("width", "100%");
+
+var filaImgs2 = crearElemento("tr");
+
+for (var i = 0; i < 2; i++) {
+    var td2 = crearElemento("td");
+    var img2 = crearElemento("img");
+
+    img2.setAttribute("src", "https://placehold.co/140x80");
+    img2.setAttribute("width", "100%");
+
+    td2.appendChild(img2);
+    filaImgs2.appendChild(td2);
+}
+
+tablaImgs2.appendChild(filaImgs2);
+col2.appendChild(tablaImgs2);
+
+
+/* COLUMNA 3 */
+var col3 = crearElemento("td");
+col3.setAttribute("width", "25%");
+
+for (var i = 0; i < 6; i++) {
+    var imgLateral = crearElemento("img");
+    imgLateral.setAttribute("src", "https://placehold.co/160x80");
+    imgLateral.setAttribute("width", "100%");
+
+    col3.appendChild(imgLateral);
+    col3.appendChild(crearElemento("br"));
+    col3.appendChild(crearElemento("br"));
+}
+
+
+filaPrincipal.appendChild(col1);
+filaPrincipal.appendChild(col2);
+filaPrincipal.appendChild(col3);
+
+tablaPrincipal.appendChild(filaPrincipal);
+document.body.appendChild(tablaPrincipal);
+
+</script>
+
+</body>
+</html>

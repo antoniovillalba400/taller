@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo tablas # 1</title>
+  <script src="utilidades.js"></script>
+</head>
+<body>
+<script>
+
+  var titulo = crearElementoTexto("h3", "Horario del Evento (3 Días)");
+  titulo.style.textAlign = "center";
+  document.body.appendChild(titulo);
+
+  var tabla = crearElemento("table");
+  tabla.setAttribute("border", "1");
+  tabla.setAttribute("cellpadding", "10");
+  tabla.setAttribute("cellspacing", "0");
+  tabla.setAttribute("width", "100%");
+
+  function crearTH(texto, colspan, rowspan) {
+    var th = crearElemento("th");
+    th.innerHTML = texto;
+    if (colspan) th.setAttribute("colspan", colspan);
+    if (rowspan) th.setAttribute("rowspan", rowspan);
+    return th;
+  }
+
+  function crearTD(texto, colspan, rowspan, estilo) {
+    var td = crearElemento("td");
+    td.innerHTML = texto;
+    if (colspan) td.setAttribute("colspan", colspan);
+    if (rowspan) td.setAttribute("rowspan", rowspan);
+    if (estilo) td.setAttribute("style", estilo);
+    return td;
+  }
+
+  function crearFila(celdas) {
+    var tr = crearElemento("tr");
+    for (var i = 0; i < celdas.length; i++) {
+      tr.appendChild(celdas[i]);
+    }
+    return tr;
+  }
+
+  var thead = crearElemento("thead");
+  var filaTH = crearFila([
+    crearTH("Día"),
+    crearTH("8:00 - 9:00"),
+    crearTH("9:00 - 10:00"),
+    crearTH("10:00 - 11:00"),
+    crearTH("11:00 - 12:00"),
+    crearTH("12:00 - 13:00"),
+    crearTH("13:00 - 14:00"),
+    crearTH("14:00 - 15:00")
+  ]);
+  thead.appendChild(filaTH);
+  tabla.appendChild(thead);
+
+  var tbody = crearElemento("tbody");
+
+  tbody.appendChild(crearFila([
+    crearTD("<b>Lunes</b>", null, 2, "text-align:center"),
+    crearTD("Sesión de Apertura", 2),
+    crearTD("Descanso"),
+    crearTD("Charla Técnica A"),
+    crearTD("Almuerzo", null, 2, "text-align:center"),
+    crearTD("Taller Práctico")
+  ]));
+
+  // LUNES fila 2
+  tbody.appendChild(crearFila([
+    crearTD("Panel de Discusión", 2),
+    crearTD("Networking"),
+    crearTD("Charla Técnica B"),
+    crearTD("Mesa Redonda")
+  ]));
+
+  tbody.appendChild(crearFila([
+    crearTD("<b>Martes</b>", null, 3, "text-align:center"),
+    crearTD("Registro"),
+    crearTD("Keynote", 2),
+    crearTD("Descanso"),
+    crearTD("Charla Técnica C", 2),
+    crearTD("Mesa Redonda")
+  ]));
+
+  tbody.appendChild(crearFila([
+    crearTD("Taller Avanzado", 2),
+    crearTD("Networking", null, 2),
+    crearTD("Charla Técnica D", 2),
+    crearTD("Exhibición", 2)
+  ]));
+
+  tbody.appendChild(crearFila([
+    crearTD("Charla Técnica E", 2),
+    crearTD("", 4)
+  ]));
+
+  tbody.appendChild(crearFila([
+    crearTD("<b>Miércoles</b>", null, 3, "text-align:center"),
+    crearTD("Desayuno de Negocios", 2, 3),
+    crearTD("Descanso"),
+    crearTD("Charla Técnica F"),
+    crearTD(""),
+    crearTD("Almuerzo", null, 3, "text-align:center"),
+    crearTD("Conferencia de Cierre")
+  ]));
+
+  tbody.appendChild(crearFila([
+    crearTD("Panel de Discusión"),
+    crearTD("<s>Taller Final</s>"),
+    crearTD(""),
+    crearTD("Networking")
+  ]));
+  tbody.appendChild(crearFila([
+    crearTD("Entrega de Premios"),
+    crearTD("", 2),
+    crearTD("")
+  ]));
+
+  tabla.appendChild(tbody);
+  document.body.appendChild(tabla);
+
+</script>
+</body>
+</html>

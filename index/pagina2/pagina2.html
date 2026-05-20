@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Tablas # 2</title>
+    <script src="utilidades.js"></script>
+</head>
+<body>
+
+<script>
+    var titulo = crearElementoTexto("h3", "Productos y Especificaciones");
+    titulo.style.textAlign = "center";
+    document.body.appendChild(titulo);
+
+    var tabla = crearElemento("table");
+    tabla.setAttribute("border", "1");
+    tabla.setAttribute("cellpadding", "10");
+    tabla.setAttribute("cellspacing", "0");
+    tabla.setAttribute("width", "100%");
+    document.body.appendChild(tabla);
+
+  
+    var fila = crearElemento("tr");
+
+    fila.appendChild(crearElementoTexto("th", "Producto"));
+    fila.appendChild(crearElementoTexto("th", "Imagen"));
+    fila.appendChild(crearElementoTexto("th", "Descripción"));
+    fila.appendChild(crearElementoTexto("th", "Características"));
+    fila.appendChild(crearElementoTexto("th", "Especificaciones"));
+
+    tabla.appendChild(fila);
+
+
+    fila = crearElemento("tr");
+
+    var td = crearElemento("td");
+    var negrita = crearElementoTexto("b", "Smartphone X");
+    td.appendChild(negrita);
+    fila.appendChild(td);
+
+   td = crearElemento("td");
+td.appendChild(
+    crearImagen("img/img.webp", "Smartphone X", 100, 100)
+);
+fila.appendChild(td);
+
+    td = crearElemento("td");
+    td.appendChild(document.createTextNode("El Smartphone X es un dispositivo de alta gama que ofrece lo último en tecnología móvil."));
+    td.appendChild(crearElemento("br"));
+    td.appendChild(crearElemento("br"));
+
+    var ul = crearElemento("ul");
+    ul.appendChild(crearElementoTexto("li", "Procesador de última generación"));
+    ul.appendChild(crearElementoTexto("li", "Pantalla OLED de 6.5 pulgadas"));
+    ul.appendChild(crearElementoTexto("li", "Batería de larga duración"));
+    td.appendChild(ul);
+    fila.appendChild(td);
+
+    td = crearElemento("td");
+    var ol = crearElemento("ol");
+    ol.appendChild(crearElementoTexto("li", "Cámara de 108 MP"));
+    ol.appendChild(crearElementoTexto("li", "Reconocimiento facial"));
+    ol.appendChild(crearElementoTexto("li", "Resistencia al agua y al polvo"));
+    td.appendChild(ol);
+    fila.appendChild(td);
+
+    td = crearElemento("td");
+    td.innerHTML = "<u>RAM</u><br>8 GB<br><u>Almacenamiento</u><br>256 GB<br><u>SO</u><br>Android 11";
+    fila.appendChild(td);
+
+    tabla.appendChild(fila);
+
+
+    fila = crearElemento("tr");
+
+    td = crearElemento("td");
+    td.appendChild(crearElementoTexto("b", "Laptop Pro"));
+    fila.appendChild(td);
+
+   td = crearElemento("td");
+td.appendChild(
+    crearImagen("img/laptop.jpg", "Laptop Pro", 100, 100)
+);
+fila.appendChild(td);
+
+    td = crearElemento("td");
+    td.appendChild(document.createTextNode("La Laptop Pro es perfecta para profesionales que necesitan un equipo potente y portátil."));
+    td.appendChild(crearElemento("br"));
+    td.appendChild(crearElemento("br"));
+
+    ul = crearElemento("ul");
+    ul.appendChild(crearElementoTexto("li", "Procesador Intel Core i7"));
+    ul.appendChild(crearElementoTexto("li", "16 GB de RAM"));
+    ul.appendChild(crearElementoTexto("li", "SSD de 512 GB"));
+    td.appendChild(ul);
+    fila.appendChild(td);
+
+    td = crearElemento("td");
+    ol = crearElemento("ol");
+    ol.appendChild(crearElementoTexto("li", "Pantalla 4K UHD"));
+    ol.appendChild(crearElementoTexto("li", "Teclado retroiluminado"));
+    ol.appendChild(crearElementoTexto("li", "Batería de 10 horas"));
+    td.appendChild(ol);
+    fila.appendChild(td);
+
+    td = crearElemento("td");
+    td.innerHTML = "<u>SSD</u><br>512 GB<br><u>Peso</u><br>1.5 kg<br><u>Duración batería</u><br>10 horas";
+    fila.appendChild(td);
+
+    tabla.appendChild(fila);
+
+
+    fila = crearElemento("tr");
+
+    td = crearElemento("td");
+    td.appendChild(crearElementoTexto("b", "Tablet Z"));
+    fila.appendChild(td);
+
+   td = crearElemento("td");
+td.appendChild(
+    crearImagen("img/tablet.jpg", "Tablet Z", 100, 100)
+);
+fila.appendChild(td);
+
+    td = crearElemento("td");
+    td.appendChild(document.createTextNode("La Tablet Z es ideal para entretenimiento y productividad en movimiento."));
+    td.appendChild(crearElemento("br"));
+    td.appendChild(crearElemento("br"));
+
+    ul = crearElemento("ul");
+    ul.appendChild(crearElementoTexto("li", "Pantalla de 10 pulgadas"));
+    ul.appendChild(crearElementoTexto("li", "4 GB de RAM"));
+    ul.appendChild(crearElementoTexto("li", "Almacenamiento de 64 GB"));
+    td.appendChild(ul);
+    fila.appendChild(td);
+
+    td = crearElemento("td");
+    ol = crearElemento("ol");
+    ol.appendChild(crearElementoTexto("li", "Compatible con stylus"));
+    ol.appendChild(crearElementoTexto("li", "Batería de 12 horas"));
+    ol.appendChild(crearElementoTexto("li", "Conectividad LTE"));
+    td.appendChild(ol);
+    fila.appendChild(td);
+
+    td = crearElemento("td");
+    td.innerHTML = "<u>RAM</u><br>4 GB<br><u>Peso</u><br>500 g<br><u>Conectividad</u><br>LTE, Wi-Fi";
+    fila.appendChild(td);
+
+    tabla.appendChild(fila);
+</script>
+
+</body>
+</html>
